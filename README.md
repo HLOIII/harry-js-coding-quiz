@@ -13,3 +13,5 @@ As a coding boot camp student, I WANT to take a timed quiz on JavaScript fundame
 * When the game is over, then I can save my initials and score
 
 Resources I used: I mostly used the information I was given from my class and I used "MDN Web Docs","W3schools", Google, Youtube.
+
+![screenshot](assets/images/webpage.PNG)
