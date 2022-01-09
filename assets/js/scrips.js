@@ -11,6 +11,22 @@ var question = [
         choice: ["quotes", "curly brackets", "parenthesis", "square brackets"],
         answer: "parenthesis"
     },
+    {
+        title: "Arrays in JavaScript can be used to store",
+        choice: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        answer: "all of the above"
+    },
+    {
+        title: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choice: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+        answer: "console.log"
+    },
+    {
+        title: "String values must be enclosed within ... when being assigned to variables",
+        choice: ["commas", "curly brackets", "quotes", "parenthesis"],
+        answer: "quotes"
+    },
+
     // more questions to be added here
 ];
 
@@ -23,11 +39,14 @@ var timeEl = document.querySelector("#time-value");
 var questionIndex = 0;
 var choiceEl = document.querySelector("#choice");
 var answerCheckEl = document.querySelector("#check-answer");
+var initialEl = document.querySelector("#initial");
+var submitBtn = document.querySelector("#submit")
 
 
 // functions
 
-var start = function () {
+// starting quiz
+var startQuiz = function () {
     // change the class of our primary screen and make it invisible
     var startQuizEl = document.getElementById("primary-screen");
     startQuizEl.setAttribute("class", "invisible");
@@ -44,14 +63,17 @@ var start = function () {
 
 };
 
+// showing timer
+
 var clock = function () {
     time--;
     timeEl.textContent = time;
     if (time <= 0) {
-        // function to end quiz
+        endQuiz();
     }
 };
 
+// displaying quettions
 var questionsQuiz = function () {
     var currentQuestion = question[questionIndex];
     var questionTitleEl = document.getElementById("question-title");
@@ -68,6 +90,8 @@ var questionsQuiz = function () {
 
 };
 
+
+// cheking answers
 var clickQuestion = function () {
     if (this.value !== question[questionIndex].answer) {
         // reduce time
@@ -95,13 +119,37 @@ var clickQuestion = function () {
 
     // time checker
     if (questionIndex === question.length) {
-        // function to end quiz
+        endQuiz();
     } else {
         questionsQuiz();
     }
 };
 
+// ending quiz
+var endQuiz = function () {
+    clearInterval(timer);
+    var endEl = document.getElementById('third-screen');
+    endEl.removeAttribute("class");
+    var scoreEl = document.getElementById('final-score')
+    scoreEl.textContent = time;
+    questionEl.setAttribute("class", "invisible")
+};
+
+// saving high scores
+var saveScores = function () {
+    var name = initialEl.value;
+    if (!name) {
+        var highScore = JSON.parse(window.localStorage.getItem("highScore")) || [];
+        var score = {
+            score: time,
+            name: name
+        };
+        highScore.push(score);
+        window.localStorage.setItem("highScore", JSON.stringify(highScore));
+        // create new html
+    }
+}
 
 
-
-startBtn.onclick = start;
+startBtn.onclick = startQuiz;
+submitBtn.onclick = saveScores();
