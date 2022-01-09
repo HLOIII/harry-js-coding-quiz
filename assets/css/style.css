@@ -1,126 +1,126 @@
 :root {
-    --primary-color: #800080;
-    --secondary-color: #00008b;
-    --tertiary-color: #808080;
+  --primary-color: #800080;
+  --secondary-color: #00008b;
+  --tertiary-color: #808080;
+}
+
+body {
+    font-family:  Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+  }
+  .screen {
+    margin: 100px auto 0 auto;
+    max-width: 600px;
   }
   
-  body {
-      font-family:  Helvetica, Arial, sans-serif;
-      font-size: 1.5rem;
-    }
-    .screen {
-      margin: 100px auto 0 auto;
-      max-width: 600px;
-    }
-    
-    .invisible {
-      display: none;
-    }
-    
-    .primary {
-      text-align: center;
-    }
-    
-    .scores {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-    
-    .check-answer {
-      font-style: italic;
-      font-size: 120%;
-      margin-top: 20px;
-      padding-top: 10px;
-      color: var(--tertiary-color);
-      border-top: 2px solid var(--tertiary-color);
-    }
-    
-    .time-tag {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-    
-    #score-link{
-      color: white;
-      text-decoration: none;
-      background-color: var(--secondary-color);
-      padding: 10px 10px;
-      transition: color 0.1s;
-    }
-    
-    #score-link:hover {
-      background-color: var(--primary-color);
-    }
-    
+  .invisible {
+    display: none;
+  }
+  
+  .primary {
+    text-align: center;
+  }
+  
+  .scores {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .check-answer {
+    font-style: italic;
+    font-size: 120%;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: var(--tertiary-color);
+    border-top: 2px solid var(--tertiary-color);
+  }
+  
+  .time-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  #score-link{
+    color: white;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    padding: 10px 10px;
+    transition: color 0.1s;
+  }
+  
+  #score-link:hover {
+    background-color: var(--primary-color);
+  }
+  
+  button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 10px 10px;
+    color: white;
+    border: 0;
+    transition: background-color 0.1s;
+  }
+  
+  button:hover {
+    background-color: var(--primary-color);
+  }
+  
+  .multiple-choice button {
+    display: block;
+  }
+  
+  input[type="text"] {
+    font-size: 100%;
+  }
+  
+  ol {
+    padding-left: 0px;
+    max-height: 400px;
+    overflow: auto;
+  }
+  
+  li {
+    padding: 5px;
+    list-style: decimal inside none;
+  }
+  
+  li:nth-child(odd) {
+    background-color: #dfdae7;
+  }
+
+/* MEDIA QUERIES BEGIN */
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+  @media (max-width: 980px) {
     button {
-      display: inline-block;
-      margin: 5px;
-      cursor: pointer;
-      font-size: 100%;
-      background-color: var(--secondary-color);
-      border-radius: 5px;
-      padding: 10px 10px;
-      color: white;
-      border: 0;
-      transition: background-color 0.1s;
+      font-size: 1.5rem;
+      margin: 16px 0px 0px 0px;
+      padding: 10px 15px;
     }
-    
-    button:hover {
-      background-color: var(--primary-color);
-    }
-    
-    .multiple-choice button {
-      display: block;
-    }
-    
-    input[type="text"] {
-      font-size: 100%;
-    }
-    
-    ol {
-      padding-left: 0px;
-      max-height: 400px;
-      overflow: auto;
-    }
-    
-    li {
-      padding: 5px;
-      list-style: decimal inside none;
-    }
-    
-    li:nth-child(odd) {
-      background-color: #dfdae7;
+  }
+
+  /* MEDIA QUERY FOR TABLETS AND SMALLER */
+  @media (max-width: 768px) {
+    button {
+      font-size: 1.2rem;
+      margin: 16px 0px 0px 0px;
+      padding: 10px 15px;
     }
   
-  /* MEDIA QUERIES BEGIN */
-  
-  /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
-    @media (max-width: 980px) {
-      button {
-        font-size: 1.5rem;
-        margin: 16px 0px 0px 0px;
-        padding: 10px 15px;
-      }
+    body {
+      font-size: 1.2rem;
     }
-  
-    /* MEDIA QUERY FOR TABLETS AND SMALLER */
-    @media (max-width: 768px) {
-      button {
-        font-size: 1.2rem;
-        margin: 16px 0px 0px 0px;
-        padding: 10px 15px;
-      }
-    
-      body {
-        font-size: 1.2rem;
-      }
+  }
+
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+  @media (max-width: 575px) {
+    button {
+      font-size: 0.8rem;
     }
-  
-    /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-    @media (max-width: 575px) {
-      button {
-        font-size: 0.8rem;
-      }
-    }
+  }
