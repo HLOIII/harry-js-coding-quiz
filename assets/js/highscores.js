@@ -1,4 +1,3 @@
-< !DOCTYPE html >
 var printScores = function () {
     var highScore = JSON.parse(window.localStorage.getItem("highscore")) || [];
     highScore.sort(function (x, y) {
@@ -15,7 +14,7 @@ var printScores = function () {
 }
 
 function clearScores() {
-    window.localStorage.removeItem("highScore");
+    window.localStorage.removeItem("highscore");
     window.location.reload();
 }
 
