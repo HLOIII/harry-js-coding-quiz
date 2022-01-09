@@ -106,7 +106,7 @@ var clickQuestion = function () {
         answerCheckEl.style.color = "red";
     } else {
         answerCheckEl.textContent = "Correct!";
-        answerCheckEl.style.color = "green";
+        answerCheckEl.style.color = "blue";
     }
 
     answerCheckEl.setAttribute("class", "check-answer");
@@ -141,7 +141,7 @@ var saveScores = function () {
 
     if (name !== "") {
         var highScore =
-            JSON.parse(window.localStorage.getItem("highScore")) || [];
+            JSON.parse(window.localStorage.getItem("highscore")) || [];
 
         var scoreNew = {
             score: time,
